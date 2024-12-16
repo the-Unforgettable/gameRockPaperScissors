@@ -7,6 +7,11 @@ function getComputerChoice(){
 }
 
 let computerNumber;
+
+let output;
+let humanScore =0;
+let computerScore = 0;
+
 function getHumanChoice( computerNumber){
 let userChoice = prompt("rock,Paper, scissors?");
 
@@ -18,11 +23,11 @@ if (userChoice == choice[computerNumber]){
 else if (userChoice =="rock"){
     x = choice[computerNumber]
     switch (x) {
-     case "Paper" : console.log("i am the winner");
+     case "Paper" : output="i am the winner";
      console.log(userChoice); 
      console.log(x);
      break;
-     case "scissors" : console.log("you are the winner"); 
+     case "scissors" : output="you are the winner"; 
      console.log(userChoice); 
      console.log(x);
      break;
@@ -33,11 +38,11 @@ else if (userChoice =="rock"){
     else if (userChoice =="paper"){
         x = choice[computerNumber]
         switch (x) {
-         case "scissors" : console.log("i am the winner");
+         case "scissors" : output="i am the winner";
          console.log(userChoice); 
          console.log(x);
          break;
-         case "rock" : console.log("you are the winner"); 
+         case "rock" : output="you are the winner"; 
          console.log(userChoice); 
          console.log(x);
          break;
@@ -48,11 +53,11 @@ else if (userChoice =="rock"){
     else {
         x = choice[computerNumber]
         switch (x) {
-         case "rock" : console.log("i am the winner");
+         case "rock" : output="i am the winner";
          console.log(userChoice); 
          console.log(x);
          break;
-         case "paper" : console.log("you are the winner"); 
+         case "paper" : output="you are the winner"; 
          console.log(userChoice); 
          console.log(x);
          break;
@@ -60,8 +65,18 @@ else if (userChoice =="rock"){
          
     
         }}
-
+console.log(output);
+if (output === "you are the winner"){ humanScore +=1;}
+else { computerScore +=1;}
 }
 
-
+function replayTheGame(){
 getHumanChoice(getComputerChoice());
+getHumanChoice(getComputerChoice());
+getHumanChoice(getComputerChoice());
+getHumanChoice(getComputerChoice());
+getHumanChoice(getComputerChoice());
+console.log(computerScore)
+console.log(humanScore)
+}
+replayTheGame();
